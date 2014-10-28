@@ -4,505 +4,353 @@
 // script.js
 
 $(document).ready(function(){
-	
- 	var num = 1;
+
+ 	var num = 0;
  	var letter_state = true;
- 	
 
- 	$(".AraButton").click(function(){	
- 		var let = num-1;
- 		switch(let) {
- 			case 0:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Ara");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 1:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Beautiful");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 2:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Car");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 				
- 			case 3:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Doctor");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 4:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Elephant");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 5:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Family");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 6:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Giraffe");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 7:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Hippo");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 8:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Inchworm");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 9:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Jaguar");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 10:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Kangaroo");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 11:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Lion");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 12:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Mouse");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 13:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Newt");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 14:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Ostrich");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 15:
- 				var new_source;
- 				if(letter_state){
- 					console.log("pig");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 16:
- 				var new_source;
- 				if(letter_state){
- 					console.log("queen");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 17:
- 				var new_source;
- 				if(letter_state){
- 					console.log("rabbit");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 18:
- 				var new_source;
- 				if(letter_state){
- 					console.log("snake");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 19:
- 				var new_source;
- 				if(letter_state){
- 					console.log("tigger");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 20:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Urchin");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 21:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Vicuna");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 22:
- 				var new_source;
- 				if(letter_state){
- 					console.log("whale");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 23:
- 				var new_source;
- 				if(letter_state){
- 					console.log("x-ray");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
-  			case 24:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Yak");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 			case 25:
- 				var new_source;
- 				if(letter_state){
- 					console.log("Zebra");
- 				    new_source = "img/sean-ahlquist.jpg"
- 					$("#letter").attr("src",new_source);
- 					letter_state = false;
- 				}
- 				else {
- 					console.log(num);
- 					var source = "img/" + let + ".png"
- 					$("#letter").attr("src",source);
- 					letter_state = true;
- 				}
- 				break;
- 		}
- 		
+ 	$(".top").click(function(){
 
- 	});
-
- 	
- 	$(".AdultButton").click(function(){
- 		var source = "img/" + num + ".png"
- 		$("#letter").attr("src",source);
- 		
- 		num += 1;
- 		letter_state = true;
  		if (num == 26)	{ num = 0; }
 
+ 		letter_state = true;
+
+ 		//If it is clicked from picture state, hide the word & mute all sounds
+ 		$("span").addClass("hidden");
+ 		$("#custom-audio").attr("src", "");
+
+ 		var source = "url(./img/let/" + num + ".png)"
+ 		$(".bottom").css("background-image", source);
+ 		
+ 		num += 1;
  	});
 
- 	 /*$('.letter').click(function(){
+ 	$(".bottom").click(function(){
 
  		var let = num-1;
+ 		var source = "";
 
  		switch(let) {
- 			case 0:
- 				console.log("A");
+ 			case 0://letter A
+ 				if(letter_state){
+
+ 					$("span").text("Ara");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/ara.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/0.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 1:
- 				console.log("B");
+ 			case 1://letter B
+ 				if(letter_state){
+ 					$("span").text("Bunny");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/bunny.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/1.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 2:
- 				console.log("C");
+ 			case 2://letter C
+ 				if(letter_state){
+ 					$("span").text("Cookie");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/cookie.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/2.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 3:
- 				console.log("D");
+ 			case 3://letter D
+ 				if(letter_state){
+ 					$("span").text("Dancing");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/dancing.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/3.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 4:
- 				console.log("E");
+ 			case 4://letter E
+ 				if(letter_state){
+ 					$("span").text("Elephant");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/elephant.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/4.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 5:
- 				console.log("F");
+ 			case 5://letter F
+ 				if(letter_state){
+ 					$("span").text("Family");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/family.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/5.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 6:
- 				console.log("G");
+ 			case 6://letter G
+ 				if(letter_state){
+ 					$("span").text("Giraffe");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/giraffe.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/6.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 7:
- 				console.log("H");
+ 			case 7://letter H
+ 				if(letter_state){
+ 					$("span").text("Harp");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/harp.png)"
+ 				    $("#custom-audio").attr("src", "./aud/cus/harp.mp3");
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					$("#custom-audio").attr("src", "");
+ 					source = "url(./img/let/7.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 8:
- 				console.log("I");
+ 			case 8://letter I
+ 				if(letter_state){
+ 					$("span").text("Igloo");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/igloo.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/8.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 9:
- 				console.log("J");
+ 			case 9://letter J
+ 				if(letter_state){
+ 					$("span").text("Jellyfish");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/jellyfish.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/9.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 10:
- 				console.log("J");
+ 			case 10://letter K
+ 				if(letter_state){
+ 					$("span").text("Kitten");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/kitten.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/10.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 11:
- 				console.log("L");
+ 			case 11://letter L
+ 				if(letter_state){
+ 					$("span").text("Leaf");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/leaf.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/11.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 12:
- 				console.log("M");
+ 			case 12://Letter M
+ 				if(letter_state){
+ 					$("span").text("Music");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/music.png)"
+ 				    $("#custom-audio").attr("src", "./aud/cus/music.mp3");
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					$("#custom-audio").attr("src", "");
+ 					source = "url(./img/let/12.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 13:
- 				console.log("N");
+ 			case 13://Letter N
+ 				if(letter_state){
+ 					$("span").text("Nest");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/nest.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/13.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 14:
- 				console.log("O");
+ 			case 14://Letter O
+ 				if(letter_state){
+ 					$("span").text("Owl");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/owl.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/14.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 15:
- 				console.log("P");
+ 			case 15://Letter P
+ 				if(letter_state){
+ 					$("span").text("Pig");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/pig.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/15.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 16:
- 				console.log("Q");
+ 			case 16://Letter Q
+ 				if(letter_state){
+ 					$("span").text("Queen");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/queen.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/16.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 17:
- 				console.log("R");
+ 			case 17://Letter R
+ 				if(letter_state){
+ 					$("span").text("Racoon");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/racoon.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/17.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 18:
- 				console.log("S");
+ 			case 18://Letter S
+ 				if(letter_state){
+ 					$("span").text("Sand");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/sand.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/18.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 19:
- 				console.log("T");
+ 			case 19://Letter T
+ 				if(letter_state){
+ 					$("span").text("Toy");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/toy.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/19.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 20:
- 				console.log("U");
+ 			case 20://Letter U
+ 				if(letter_state){
+ 					$("span").text("Umbrella");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/umbrella.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/20.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 21:
- 				console.log("V");
+ 			case 21://Letter V
+ 				if(letter_state){
+ 					$("span").text("Violin");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/violin.png)"
+ 				    $("#custom-audio").attr("src", "./aud/cus/violin.mp3");
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					$("#custom-audio").attr("src", "");
+ 					source = "url(./img/let/21.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 22:
- 				console.log("W");
+ 			case 22://Letter W
+ 				if(letter_state){
+ 					$("span").text("Water");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/water.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/22.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 23:
- 				console.log("X");
+ 			case 23://Letter X
+ 				if(letter_state){
+ 					$("span").text("X-ray");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/xray.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/23.png)"
+ 					letter_state = true;
+ 				}
  				break;
-  			case 24:
- 				console.log("Y");
+  			case 24://Letter Y
+ 				if(letter_state){
+ 					$("span").text("Yo-yo");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/yoyo.gif)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/24.png)"
+ 					letter_state = true;
+ 				}
  				break;
- 			case 25:
- 				console.log("Z");
+ 			case 25://Letter Z
+ 				if(letter_state){
+ 					$("span").text("Zebra");
+ 					$("span").removeClass("hidden");
+ 				    source = "url(./img/wrd/zebra.png)"
+ 					letter_state = false;
+ 				} else {
+ 					$("span").addClass("hidden");
+ 					source = "url(./img/let/25.png)"
+ 					letter_state = true;
+ 				}
  				break;
  		}
  		
- 	});*/
+ 		$(this).css("background-image", source);
+ 	});
 });
