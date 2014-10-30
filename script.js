@@ -17,7 +17,7 @@ $(document).ready(function(){
  		//If it is clicked from picture state, hide the word & mute all sounds
  		$("span").addClass("hidden");
  		$("#custom-audio").attr("src", "");
-
+ 		$("#letter-audio").attr("src", "./aud/letters/" + num + ".wav");
  		var source = "url(./img/let/" + num + ".png)"
  		$(".bottom").css("background-image", source);
  		
@@ -40,7 +40,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/A.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/0.png)"
  					letter_state = true;
  				}
@@ -54,7 +54,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/B.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/1.png)"
  					letter_state = true;
  				}
@@ -68,7 +68,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/C.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/2.png)"
  					letter_state = true;
  				}
@@ -82,7 +82,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/D.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/3.png)"
  					letter_state = true;
  				}
@@ -96,7 +96,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/E.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/4.png)"
  					letter_state = true;
  				}
@@ -110,7 +110,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/F.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/5.png)"
  					letter_state = true;
  				}
@@ -124,7 +124,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/G.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/6.png)"
  					letter_state = true;
  				}
@@ -139,7 +139,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/h.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					$("#custom-audio").attr("src", "");
  					source = "url(./img/let/7.png)"
  					letter_state = true;
@@ -154,7 +154,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/I.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/8.png)"
  					letter_state = true;
  				}
@@ -168,7 +168,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/J.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/9.png)"
  					letter_state = true;
  				}
@@ -182,7 +182,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/K.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/10.png)"
  					letter_state = true;
  				}
@@ -196,7 +196,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/L.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/11.png)"
  					letter_state = true;
  				}
@@ -211,7 +211,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/M.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					$("#custom-audio").attr("src", "");
  					source = "url(./img/let/12.png)"
  					letter_state = true;
@@ -226,7 +226,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/N.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/13.png)"
  					letter_state = true;
  				}
@@ -240,7 +240,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/O.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/14.png)"
  					letter_state = true;
  				}
@@ -254,7 +254,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/P.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/15.png)"
  					letter_state = true;
  				}
@@ -268,7 +268,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/Q.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/16.png)"
  					letter_state = true;
  				}
@@ -282,7 +282,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/R.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/17.png)"
  					letter_state = true;
  				}
@@ -296,7 +296,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/S.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/18.png)"
  					letter_state = true;
  				}
@@ -310,7 +310,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/T.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/19.png)"
  					letter_state = true;
  				}
@@ -324,7 +324,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/U.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/20.png)"
  					letter_state = true;
  				}
@@ -339,7 +339,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/V.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					$("#custom-audio").attr("src", "");
  					source = "url(./img/let/21.png)"
  					letter_state = true;
@@ -354,7 +354,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/W.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/22.png)"
  					letter_state = true;
  				}
@@ -368,7 +368,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/X.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/23.png)"
  					letter_state = true;
  				}
@@ -382,7 +382,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/Y.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/24.png)"
  					letter_state = true;
  				}
@@ -396,7 +396,7 @@ $(document).ready(function(){
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
- 					$("#letter-audio").attr("src", "./aud/letters/Z.wav");
+ 					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
  					source = "url(./img/let/25.png)"
  					letter_state = true;
  				}
