@@ -75,10 +75,10 @@ $(document).ready(function(){
  				break;
  			case 3://letter D
  				if(letter_state){
- 					$("span").text("Dancing");
+ 					$("span").text("Deer");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Dancing.wav");
- 				    source = "url(./img/wrd/dancing.gif)"
+ 				    source = "url(./img/wrd/deer.gif)"
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -206,8 +206,7 @@ $(document).ready(function(){
  					$("span").text("Music");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Music.wav");
- 				    source = "url(./img/wrd/music.png)"
- 				    $("#custom-audio").attr("src", "./aud/cus/music.mp3");
+ 				    $("#video").attr("src", "./vid/music.mp4");
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -404,5 +403,6 @@ $(document).ready(function(){
  		}
  		
  		$(this).css("background-image", source);
+
  	});
 });

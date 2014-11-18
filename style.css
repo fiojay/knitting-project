@@ -30,13 +30,13 @@ a:visited {
 .top {
 	height: 95px;
 	width: 315px;
-	background-color: #fff;
+	border: 1px solid #7e7e7e;
 }
 
 .bottom {
 	height: 375px;
-	width: 850px;
-	background-color: #fff;
+	width: 800px;
+	border: 1px solid #7e7e7e;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
