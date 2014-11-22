@@ -18,6 +18,7 @@ $(document).ready(function(){
  		$("span").addClass("hidden");
  		$("#custom-audio").attr("src", "");
  		$("#letter-audio").attr("src", "./aud/letters/" + num + ".wav");
+ 		$("#video").attr("src", "");
  		var source = "url(./img/let/" + num + ".png)"
  		$(".bottom").css("background-image", source);
  		
@@ -211,7 +212,7 @@ $(document).ready(function(){
  				} else {
  					$("span").addClass("hidden");
  					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
- 					$("#custom-audio").attr("src", "");
+ 					$("#video").attr("src", "");
  					source = "url(./img/let/12.png)"
  					letter_state = true;
  				}
