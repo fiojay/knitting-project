@@ -3,6 +3,20 @@
 // EECS 481
 // script.js
 
+
+//timeout delay functions for video & custom audio
+function start_video(){
+	setTimeout(function(){
+	    document.getElementById("video").play();
+	}, 800);
+}
+
+function start_audio(){
+	setTimeout(function(){
+	    document.getElementById("custom-audio").play();
+	}, 1000);
+}
+
 $(document).ready(function(){
 
  	var num = 0;
@@ -208,6 +222,7 @@ $(document).ready(function(){
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Music.wav");
  				    $("#video").attr("src", "./vid/music.mp4");
+ 				    start_video();
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -336,6 +351,7 @@ $(document).ready(function(){
  					$("#word-audio").attr("src", "./aud/words/Violin.wav");
  				    source = "url(./img/wrd/violin.png)"
  				    $("#custom-audio").attr("src", "./aud/cus/violin.mp3");
+ 				    start_audio();
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
