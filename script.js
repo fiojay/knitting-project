@@ -320,7 +320,7 @@ $(document).ready(function(){
  					$("span").text("Umbrella");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Umbrella.wav");
- 				    source = "url(./img/wrd/umbrella.gif)"
+ 				    source = "url(./img/wrd/umbrella.png)"
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -378,7 +378,7 @@ $(document).ready(function(){
  					$("span").text("Yo-yo");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Yo-yo.wav");
- 				    source = "url(./img/wrd/yoyo.gif)"
+ 				    source = "url(./img/wrd/yoyo.png)"
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
