@@ -2,7 +2,21 @@
 // knitting-project
 // EECS 481
 // script.js
+var com = require("serialport");
 
+var serialPort = new com.SerialPort("/dev/cu.usbmodem1a121", {
+    baudrate: 9600,
+    parser: com.parsers.readline('\r\n')
+  });
+
+serialPort.on('open',function() {
+  console.log('Port open');
+});
+
+serialPort.on('data', function(data) {
+  console.log(data);
+});
+/*
 $(document).ready(function(){
 
  	var num = 0;
@@ -75,10 +89,10 @@ $(document).ready(function(){
  				break;
  			case 3://letter D
  				if(letter_state){
- 					$("span").text("Deer");
+ 					$("span").text("Dancing");
  					$("span").removeClass("hidden");
- 					$("#word-audio").attr("src", "./aud/words/Deer.wav");
- 				    source = "url(./img/wrd/deer.gif)"
+ 					$("#word-audio").attr("src", "./aud/words/Dancing.wav");
+ 				    source = "url(./img/wrd/dancing.gif)"
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -206,7 +220,8 @@ $(document).ready(function(){
  					$("span").text("Music");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Music.wav");
- 				    $("#video").attr("src", "./vid/music.mp4");
+ 				    source = "url(./img/wrd/music.png)"
+ 				    $("#custom-audio").attr("src", "./aud/cus/music.mp3");
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -362,7 +377,7 @@ $(document).ready(function(){
  				if(letter_state){
  					$("span").text("X-ray");
  					$("span").removeClass("hidden");
- 					$("#word-audio").attr("src", "./aud/words/Xray.wav");
+ 					$("#word-audio").attr("src", "./aud/words/X-ray.wav");
  				    source = "url(./img/wrd/xray.png)"
  					letter_state = false;
  				} else {
@@ -376,7 +391,7 @@ $(document).ready(function(){
  				if(letter_state){
  					$("span").text("Yo-yo");
  					$("span").removeClass("hidden");
- 					$("#word-audio").attr("src", "./aud/words/Yoyo.wav");
+ 					$("#word-audio").attr("src", "./aud/words/Yo-yo.wav");
  				    source = "url(./img/wrd/yoyo.gif)"
  					letter_state = false;
  				} else {
@@ -403,6 +418,6 @@ $(document).ready(function(){
  		}
  		
  		$(this).css("background-image", source);
-
  	});
 });
+*/
