@@ -1,4 +1,4 @@
-var GalileoResults = function(view, callback){
+
 	var com = require("serialport");
 
 	var serialPort = new com.SerialPort("/dev/cu.usbmodem1a121", {
@@ -21,7 +21,7 @@ var GalileoResults = function(view, callback){
 
 
 
-}
+
 
 
 
