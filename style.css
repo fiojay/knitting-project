@@ -17,7 +17,7 @@ h2 {
 
 a,
 a:visited {
-	color: #ff7f7f;
+	color: #0575bc;
 	text-decoration: none;
 }
 
@@ -59,7 +59,8 @@ a:visited {
 }
 
 #project-name {
-	padding-top: 35px;
+	padding-top: 50px;
+	width: 900px;
 }
 
 .hidden {

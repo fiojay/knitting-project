@@ -3,6 +3,20 @@
 // EECS 481
 // script.js
 
+
+//timeout delay functions for video & custom audio
+function start_video(){
+	setTimeout(function(){
+	    document.getElementById("video").play();
+	}, 800);
+}
+
+function start_audio(){
+	setTimeout(function(){
+	    document.getElementById("custom-audio").play();
+	}, 1000);
+}
+
 $(document).ready(function(){
 
  	var num = 0;
@@ -18,6 +32,7 @@ $(document).ready(function(){
  		$("span").addClass("hidden");
  		$("#custom-audio").attr("src", "");
  		$("#letter-audio").attr("src", "./aud/letters/" + num + ".wav");
+ 		$("#video").attr("src", "");
  		var source = "url(./img/let/" + num + ".png)"
  		$(".bottom").css("background-image", source);
  		
@@ -207,11 +222,12 @@ $(document).ready(function(){
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Music.wav");
  				    $("#video").attr("src", "./vid/music.mp4");
+ 				    start_video();
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
  					$("#letter-audio").attr("src", "./aud/letters/" + let + ".wav");
- 					$("#custom-audio").attr("src", "");
+ 					$("#video").attr("src", "");
  					source = "url(./img/let/12.png)"
  					letter_state = true;
  				}
@@ -319,7 +335,7 @@ $(document).ready(function(){
  					$("span").text("Umbrella");
  					$("span").removeClass("hidden");
  					$("#word-audio").attr("src", "./aud/words/Umbrella.wav");
- 				    source = "url(./img/wrd/umbrella.gif)"
+ 				    source = "url(./img/wrd/umbrella.png)"
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -335,6 +351,7 @@ $(document).ready(function(){
  					$("#word-audio").attr("src", "./aud/words/Violin.wav");
  				    source = "url(./img/wrd/violin.png)"
  				    $("#custom-audio").attr("src", "./aud/cus/violin.mp3");
+ 				    start_audio();
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
@@ -376,8 +393,13 @@ $(document).ready(function(){
  				if(letter_state){
  					$("span").text("Yo-yo");
  					$("span").removeClass("hidden");
+
+ 					//$("#word-audio").attr("src", "./aud/words/Yoyo.wav");
+ 				    //source = "url(./img/wrd/yoyo.gif)"
+
  					$("#word-audio").attr("src", "./aud/words/Yoyo.wav");
- 				    source = "url(./img/wrd/yoyo.gif)"
+ 				    source = "url(./img/wrd/yoyo.png)"
+
  					letter_state = false;
  				} else {
  					$("span").addClass("hidden");
