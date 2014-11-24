@@ -1,6 +1,5 @@
 /*
-  Analog Input
- Demonstrates analog input by reading an analog sensor on analog pin 0 and
+  Analog Input Demonstrates analog input by reading an analog sensor on analog pin 0 and
  turning on and off a light emitting diode(LED)  connected to digital pin 13. 
  The amount of time the LED will be on and off depends on
  the value obtained by analogRead(). 
@@ -27,12 +26,14 @@
  
  */
 
-int sensorPin = A0;    // select the input pin for the potentiometer
-int sensorPin2 = A5;
+int sensorPin = A0;    
+int sensorPin2 = A3;  
+int sensorPin3 = A5;  
 
 int ledPin = 13;      // select the pin for the LED
-int sensorValue = 0;  // variable to store the value coming from the sensor
-int sensorValue2 = 0;
+int sensorValue = 0;  //sensor value for front textile to measure light touch
+int sensorValue2 = 0; //sensor value for back textile to measure push
+int sensorValue3 = 0; //sensor value for adult portion to change letter 
 
 void setup() {
   // declare the ledPin as an OUTPUT:
@@ -58,15 +59,21 @@ void loop() {
   
 //  Serial.print("sketch uploaded");
  
-  if (sensorValue > 5 ) { 
+  if (sensorValue > 2 ) { 
     Serial.print("sensor value is: "); 
     Serial.println(sensorValue, DEC);
   }
     
    sensorValue2 = analogRead(sensorPin2);
-   if(sensorValue2 > 5) { 
+   if(sensorValue2 > 2) { 
    Serial.print("sensor value 2 is: "); 
-    Serial.println(sensorValue2, DEC);
+   Serial.println(sensorValue2, DEC);
   } 
+  
+   sensorValue3 = analogRead(sensorPin3);
+   if(sensorValue3 > 2) { 
+   Serial.print("sensor value 3 is: "); 
+   Serial.println(sensorValue3, DEC);
+   }
 }
 
