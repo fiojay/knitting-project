@@ -59,24 +59,24 @@ void loop() {
   
 //  Serial.print("sketch uploaded");
  
-  if (sensorValue > 1) { 
-    Serial.print("AraTouch is: "); 
+  if (sensorValue > 0) { 
+    Serial.print("AraTouch "); 
     Serial.println(sensorValue, DEC);
-   delay(2);
+   delay(2000);
   }
     
    sensorValue2 = analogRead(sensorPin2);
-   if(sensorValue2 > 1) { 
-   Serial.print("AraPush: "); 
+   if(sensorValue2 > 0) { 
+   Serial.print("AraPushT "); 
    Serial.println(sensorValue2, DEC);
-   delay(2);
+   delay(2000);
   } 
   
    sensorValue3 = analogRead(sensorPin3);
-   if(sensorValue3 > 1) { 
-   Serial.print("AdultTouch is: "); 
+   if(sensorValue3 > 0) { 
+   Serial.print("AdultTouch "); 
    Serial.println(sensorValue3, DEC);
-   delay(2);
+   delay(2000);
    }
 }
 

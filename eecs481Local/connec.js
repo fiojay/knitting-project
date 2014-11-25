@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var app = express();
 
 var com = require("serialport");
@@ -29,8 +29,9 @@ app.get('/', function(request, response){
 
 app.listen(8080);
 
+/*
 
-*/
+
 
 var com = require('serialport')// include the library
 var servi = require('servi');
@@ -86,6 +87,6 @@ function showPortClose() {
 function showError(error) {
    console.log('Serial port error: ' + error);
 }
-
+*/
 
 

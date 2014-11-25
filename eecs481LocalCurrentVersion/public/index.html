@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="//cdn.jsdelivr.net/p5.js/0.3.8/p5.min.js"></script>
+ <script type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.8/addons/p5.dom.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+var text; // variable for the text div you'll create
+var top_partition;
+var bottom_partition;
+var middle_partition; 
+var inner_div_middle;
+var span_middle;
+var inner_video_bottom;
+var audio_letter;
+var audio_word;
+var audio_custom;
+var vid_source;
+var aud_letter_source;
+var aud_word_source;
+var aud_custom_source;
+var num = 0;
+var letter_state = true;
+
+
+	function setup() {
+  // make a new div and position it at 10, 10:
+  document.body.style.backgroundColor="yellow";
+  document.body.style.marginTop = "0px";
+  document.body.style.marginBottom = "0px";
+  document.body.style.marginLeft = "0px";
+  document.body.style.marginRight = "0px";
+  document.body.style.paddingTop = "0px";
+  document.body.style.paddingRight = "0px";
+  document.body.style.paddingLeft = "0px";
+  document.body.style.paddingBottom = "0px";
+  document.body.style.fontFamily = "Helvetica";
+  document.getElementById("defaultCanvas").style.display = "none";
+
+  //text = createDiv("Sensor reading:");
+  //text.position(10,10);
+  // make a HTTP call to the server for the data:
+  var sensorReading = loadStrings("/data", showData);
+
+ /* top_partition = document.createElement('div');
+  top_partition.className = 'top patition';
+  top_partition.id = 'AdultTouch';
+  document.body.appendChild(top_partition);
+*/
+  middle_partition = document.createElement('div');
+  middle_partition.className = 'middle parition';
+  middle_partition.id = 'middle';
+  inner_div_middle = document.createElement('div');
+  inner_div_middle.className = 'word-container';
+  middle_partition.appendChild(inner_div_middle);
+  span_middle = document.createElement('span');
+  span_middle.className = 'hidden word';
+  span_middle.id = 'spanMiddle';
+  inner_div_middle.appendChild(span_middle);
+   document.body.appendChild(middle_partition);
+
+   document.getElementById('middle').style.marginLeft = 'auto';
+   document.getElementById('middle').style.marginRight = 'auto';
+   document.getElementById('middle').style.textAlign = 'center';
+   document.getElementById('middle').style.color = '#0575bc';
+   document.getElementById('middle').style.height = "100px";
+   document.getElementById('middle').style.fontSize = "40px";
+   //document.getElementById('middle').style.backgroundColor = "#ffffff";
+
+
+
+
+  bottom_partition = document.createElement('div');
+  bottom_partition.className = 'bottom partition';
+  bottom_partition.id = 'bottom';
+  document.body.appendChild(bottom_partition);
+  document.getElementById('bottom').style.marginLeft = "auto";
+  document.getElementById('bottom').style.marginRight = "auto";
+  document.getElementById('bottom').style.height = "1000px";
+  document.getElementById('bottom').style.width = "700px";
+
+  document.getElementById('bottom').style.borderWidth = "1px";
+  document.getElementById('bottom').style.borderStyle = "solid";
+  document.getElementById('bottom').style.borderColor = "#7e7e7e";
+  
+
+  
+
+  inner_video_bottom = document.createElement('video');
+  bottom_partition.appendChild(inner_video_bottom);
+  vid_source = document.createElement('source');
+  vid_source.type = 'video/mp4';
+  inner_video_bottom.appendChild(vid_source);
+
+
+
+
+
+
+  audio_letter = document.createElement('audio');
+  aud_letter_source = document.createElement('source');
+  aud_letter_source.type = 'audio/mpeg';
+  audio_letter.appendChild(aud_letter_source);
+  document.body.appendChild(audio_letter);
+
+
+
+
+
+  audio_word = document.createElement('audio');
+  aud_word_source = document.createElement('source');
+  aud_word_source.type = 'audio/mpeg';
+  audio_word.appendChild(aud_word_source);
+  document.body.appendChild(audio_word);
+
+
+  audio_custom = document.createElement('audio');
+  aud_custom_source = document.createElement('source');
+  aud_custom_source.type = 'audio/mpeg';
+  audio_custom.appendChild(aud_custom_source);
+  document.body.appendChild(audio_custom);
+
+  
+}
+
+
+function showData(result) {
+   // when the server returns, show the result in the div:
+   //text.html("Sensor reading:" + result);
+   //text.position(result, 10);
+  
+
+  var res = result[0];
+     //console.log(res);
+
+  if(res !== undefined){
+  var split_string = res.split(" ");  
+  var res_string = split_string[0];
+
+  var res_value = split_string[1]; 
+ 
+  var compare_str = res_string.substr(-6); 
+ 
+   
+  
+
+//console.log(compare_res);
+  if(compare_str === "tTouch" ){
+    //console.log("here1");
+    if (num == 26)  { num = 0; }
+    letter_state = true;
+
+    //If it is clicked from picture state, hide the word & mute all sounds
+    $("span").addClass("hidden");
+    document.getElementById('spanMiddle')
+    $("#custom-audio").attr("src", "");
+   // $("#letter-audio").attr("src", "./aud/letters/" + num + ".wav");
+    //var source = "url(./img/let/" + num + ".png)"
+    //$(".bottom").css("background-image", source);
+    
+    num += 1;
+  }
+  else if (compare_str === "apushT"){
+    //console.log("here2");
+  }
+  else if (compare_str === "aTouch"){
+    //console.log("here3");
+  }
+  
+}
+
+   // make another HTTP call:
+   var sensorReading = loadStrings("/data", showData);
+}
+
+ </script>
+ </head>
+ <body>
+ </body>
+</html>

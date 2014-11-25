@@ -1,95 +1,54 @@
 <!DOCTYPE html>
-<html>
- <head>
- 	<link href="/css/style.css" rel="stylesheet" type="text/css">
- <script src="//cdn.jsdelivr.net/p5.js/0.3.8/p5.min.js"></script>
- <script type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.8/addons/p5.dom.js"></script>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- 
-<script type="text/javascript">
-var text; // variable for the text div you'll create
-var top_partition;
-var bottom_partition;
-var middle_partition; 
-var inner_div_middle;
-var span_middle;
-var inner_video_bottom;
-var audio_letter;
-var audio_word;
-var audio_custom;
-var vid_source;
-var aud_letter_source;
-var aud_word_source;
-var aud_custom_source;
 
-	function setup() {
-  // make a new div and position it at 10, 10:
-  text = createDiv("Sensor reading:");
-  text.position(10,10);
-  // make a HTTP call to the server for the data:
-  var sensorReading = loadStrings("/data", showData);
+<html lang='en'>
 
-  top_partition = document.createElement('div');
-  top_partition.className = 'top patition';
-  top_partition.id = 'AdultTouch';
+<head>
+
+	<title>Knitting Project</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css">
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src= "bundle.js"></script>
+	<script type="text/javascript" src = "script.js"></script>
+	
+
+</head>
+<body>
+
+	<div class="top partition"></div>
+
+	<div class="middle parition">
+		<div class="word-container">
+			<span class="hidden word"></span>
+		</div>
+	</div>
 
 
-  middle_partition = document.createElement('div');
-  middle_partition.className = 'middle parition';
-  middle_partition.id = 'AraPush';
-  inner_div_middle = document.createElement('div');
-  inner_div_middle.className = 'word-container';
-  middle_partition.appendChild(inner_div_middle);
-  span_middle = document.createElement('span');
-  span_middle.className = 'hidden word';
-  inner_div_middle.appendChild(span_middle);
-  
-
-  bottom_partition = document.createElement('div');
-  bottom_partition.className = 'bottom partition';
-  bottom_partition.id = 'AraTouch';
-
-  inner_video_bottom = document.createElement('video');
-  bottom_partition.appendChild(inner_video_bottom);
-  vid_source = document.createElement('source');
-  vid_source.type = 'video/mp4';
-  inner_video_bottom.appendChild(vid_source);
-
-  audio_letter = document.createElement('audio');
-  aud_letter_source = document.createElement('source');
-  aud_letter_source.type = 'audio/mpeg';
-  audio_letter.appendChild(aud_letter_source);
-
-  audio_word = document.createElement('audio');
-  aud_word_source = document.createElement('source');
-  aud_word_source.type = 'audio/mpeg';
-  audio_word.appendChild(aud_word_source);
-
-  audio_custom = document.createElement('audio');
-  aud_custom_source = document.createElement('source');
-  aud_custom_source.type = 'audio/mpeg';
-  audio_custom.appendChild(aud_custom_source);
+	<div class="bottom partition">
 
 
-  
-}
+		<video autoplay width="520" height="375" id="video">
+		 	<source type="video/mp4">
+		</video>
 
- 
-function showData(result) {
-   // when the server returns, show the result in the div:
-   text.html("Sensor reading:" + result);
-   text.position(result, 10);
-   //console.log(result);
-   //bottom_partition("bottom " + result);
-   //bottom_partition.partition(result, 10);
-   //middle_partition("middle " + result);
-   //top_partition("top " + result);
-   // make another HTTP call:
-   var sensorReading = loadStrings("/data", showData);
-}
+	</div>
 
- </script>
- </head>
- <body>
- </body>
+	
+	<audio autoplay id="letter-audio">
+  		<source type="audio/mpeg">
+	</audio>
+
+	
+	<audio autoplay id="word-audio">
+  		<source type="audio/mpeg">
+	</audio>
+
+
+	<audio autoplay loop id="custom-audio">
+  		<source type="audio/mpeg">
+	</audio>
+
+
+</body>
+
 </html>

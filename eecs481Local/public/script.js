@@ -11,7 +11,7 @@ $(document).ready(function(){
       }); 
   });*/
 
-
+console.log("here");
 	var com = require('serialport');
 
 	var serialPort = new com.SerialPort("/dev/cu.usbmodem1a121", {
