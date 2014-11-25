@@ -1,0 +1,74 @@
+/* Fiona Campbell */
+/* knitting-project */
+/* EECS 481 */
+/* style.css */
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fef1b5;
+	font-family: Helvetica;
+}
+
+h1,
+h2 {
+	margin: 0;
+}
+
+a,
+a:visited {
+	color: #ff7f7f;
+	text-decoration: none;
+}
+
+.partition {
+	margin: auto;
+	text-align: center;
+	background-color: #fef1b6;
+	cursor: pointer;
+}
+
+.top {
+	height: 95px;
+	width: 315px;
+	border: 1px solid #7e7e7e;
+}
+
+.bottom {
+	height: 375px;
+	width: 800px;
+	border: 1px solid #7e7e7e;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.middle {
+	height: 200px;
+	font-size: 40px;
+	color: #0575bc;
+}
+
+.link {
+	padding-top: 10px;
+	text-transform: uppercase;
+}
+
+.start {
+	padding-top: 100px;
+	font-size: 60px;
+}
+
+#project-name {
+	padding-top: 35px;
+}
+
+.hidden {
+	display: none;
+}
+
+.word-container {
+	padding-top: 50px;
+	font-size: 85px;
+	text-align:center;
+}
