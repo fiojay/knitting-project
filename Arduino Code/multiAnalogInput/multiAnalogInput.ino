@@ -26,9 +26,9 @@
  
  */
 
-int sensorPin = A0;    
-int sensorPin2 = A3;  
-int sensorPin3 = A5;  
+int sensorPin = A0;  //AraTouch  
+int sensorPin2 = A3;  //AraPush
+int sensorPin3 = A5;  //AdultTouch
 
 int ledPin = 13;      // select the pin for the LED
 int sensorValue = 0;  //sensor value for front textile to measure light touch
@@ -62,21 +62,21 @@ void loop() {
   if (sensorValue > 0) { 
     Serial.print("AraTouch "); 
     Serial.println(sensorValue, DEC);
-   delay(2000);
+   delay(1);
   }
     
    sensorValue2 = analogRead(sensorPin2);
    if(sensorValue2 > 0) { 
    Serial.print("AraPushT "); 
    Serial.println(sensorValue2, DEC);
-   delay(2000);
+   delay(1);
   } 
   
    sensorValue3 = analogRead(sensorPin3);
    if(sensorValue3 > 0) { 
    Serial.print("AdultTouch "); 
    Serial.println(sensorValue3, DEC);
-   delay(2000);
+   delay(1);
    }
 }
 

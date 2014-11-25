@@ -1,37 +1,3 @@
-var express = require('express');
-var app = express();
-
-var com = require("serialport");
-var dataInput;
-var serialPort = new com.SerialPort("/dev/cu.usbmodem1a121", {
-    baudrate: 9600,
-    parser: com.parsers.readline('\r\n')
-  });
-
-serialPort.on('open',function() {
-  console.log('Port open');
-});
-
-serialPort.on('data', function(data) {
-  console.log(data);
-  dataInput = data;
-});
-
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/files'));
-app.use(express.static(__dirname ));
-
-
-app.get('/', function(request, response){
-	
-  response.sendFile("index.html", {"root": __dirname});
-});
-
-app.listen(8080);
-
-/*
-
-
 
 var com = require('serialport')// include the library
 var servi = require('servi');
@@ -61,13 +27,13 @@ function showPortOpen() {
 }
  
 function saveLatestData(data) {
-   console.log(data);
+   //console.log(data);
 }
 
 
 function sendData(request) {
   // print out the fact that a client HTTP request came in to the server:
-  console.log("Got a client request, sending them the data.");
+ // console.log("Got a client request, sending them the data.");
   // respond to the client request with the latest serial string:
   request.respond(latestData);
 }
@@ -75,7 +41,7 @@ function sendData(request) {
 var latestData = 0;
 
 function saveLatestData(data) {
-   console.log(data);
+   //console.log(data);
    latestData = data;
 }
 
@@ -87,6 +53,6 @@ function showPortClose() {
 function showError(error) {
    console.log('Serial port error: ' + error);
 }
-*/
+
 
 
