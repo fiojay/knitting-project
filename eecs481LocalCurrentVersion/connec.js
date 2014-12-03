@@ -42,6 +42,7 @@ var latestData = 0;
 
 function saveLatestData(data) {
    //console.log(data);
+   
    latestData = data;
 }
 

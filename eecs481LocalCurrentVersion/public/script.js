@@ -19,6 +19,7 @@ console.log("here1");
  		$("span").addClass("hidden");
  		$("#custom-audio").attr("src", "");
  		$("#letter-audio").attr("src", "./aud/letters/" + num + ".wav");
+ 		
  		var source = "url(./img/let/" + num + ".png)"
  		$(".bottom").css("background-image", source);
  		
