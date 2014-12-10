@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <script src="//cdn.jsdelivr.net/p5.js/0.3.8/p5.min.js"></script>
+ <script type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.8/addons/p5.dom.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+  var text; // variable for the text div you'll create
+  var top_partition;
+  var bottom_partition;
+  var middle_partition; 
+  var inner_div_middle;
+  var span_middle;
+  var inner_video_bottom;
+  var audio_letter;
+  var audio_word;
+  var audio_custom;
+  var vid_source;
+  var aud_letter_source;
+  var aud_word_source;
+  var aud_custom_source;
+  var num = 25;
+  var flag = false;
+
+
+
+  function setup() {
+    // make a new div and position it at 10, 10:
+    document.body.style.backgroundColor="#ffff99";
+    document.body.style.marginTop = "0px";
+    document.body.style.marginBottom = "0px";
+    document.body.style.marginLeft = "0px";
+    document.body.style.marginRight = "0px";
+    document.body.style.paddingTop = "0px";
+    document.body.style.paddingRight = "0px";
+    document.body.style.paddingLeft = "0px";
+    document.body.style.paddingBottom = "0px";
+    document.body.style.fontFamily = "Helvetica";
+    document.getElementById("defaultCanvas").style.display = "none";
+
+    // make a HTTP call to the server for the data:
+    var sensorReading = loadStrings("/data", showData);
+    middle_partition = document.createElement('div');
+    middle_partition.className = 'middle parition';
+    middle_partition.id = 'middle';
+    inner_div_middle = document.createElement('div');
+    inner_div_middle.className = 'word-container';
+    middle_partition.appendChild(inner_div_middle);
+    span_middle = document.createElement('span');
+    inner_div_middle.appendChild(span_middle);
+    document.body.appendChild(middle_partition);
+
+    document.getElementById('middle').style.marginLeft = 'auto';
+    document.getElementById('middle').style.marginRight = 'auto';
+    document.getElementById('middle').style.textAlign = 'center';
+    document.getElementById('middle').style.color = '#0575bc';
+    document.getElementById('middle').style.height = "100px";
+    document.getElementById('middle').style.fontSize = "100px";
+   
+    bottom_partition = document.createElement('div');
+    bottom_partition.className = 'bottom partition';
+    bottom_partition.id = 'bottom';
+    document.body.appendChild(bottom_partition);
+    document.getElementById('bottom').style.marginLeft = "auto";
+    document.getElementById('bottom').style.marginRight = "auto";
+    document.getElementById('bottom').style.height = "400px";
+    document.getElementById('bottom').style.width = "700px";
+    document.getElementById('bottom').style.position = "relative";
+    document.getElementById('bottom').style.bottom = "-50px";
+
+    document.getElementById('bottom').style.backgroundRepeat = "no-repeat";
+    document.getElementById('bottom').style.backgroundPosition = "center";
+    document.getElementById('bottom').style.backgroundSize = "contain";
+
+    inner_video_bottom = document.createElement('video');
+    inner_video_bottom.id = "vid_id";
+    inner_video_bottom.src = "";
+    inner_video_bottom.autoplay = true;
+    bottom_partition.appendChild(inner_video_bottom);
+
+    audio_letter = document.createElement('audio');
+    audio_letter.id = "audio_id";
+    audio_letter.src = "";
+    audio_letter.autoplay = true;
+    document.body.appendChild(audio_letter);
+
+    audio_word = document.createElement('audio');
+    audio_word.id = "aud_word_id";
+    audio_word.src = "";
+    audio_word.autoplay = true;
+    document.body.appendChild(audio_word);
+
+    audio_custom = document.createElement('audio');
+    audio_custom.id = "aud_cus_id";
+    audio_custom.src = "";
+    audio_custom.autoplay = true;
+
+    document.body.appendChild(audio_custom);
+}
+
+
+function delay(){
+  setTimeout(function(){
+    var sensorReading = loadStrings("/data", showData);  
+  }, 1500);
+}
+
+var current_time;
+function showData(result) {
+
+  var res = result[0];
+  console.log(res);
+  var res_string;
+  var res_value;
+  var time_compare;
+  var compare_str;
+
+  if(res !== undefined) 
+  {
+    var split_string = res.split(" ");  
+    res_string = split_string[0];
+    res_value = split_string[1]; 
+    time_compare = split_string[2];
+    compare_str = res_string.substr(-6);  
+    current_time = Date.now();
+    if(compare_str === "tTouch" && res_value > 10 && (current_time - time_compare) < 1000) 
+    {
+      flag = true;
+      num += 1;
+      if (num == 26)  { num = 0; }
+      //If it is clicked from picture state, hide the word & mute all sounds
+      $("span").text("");
+      document.getElementById("vid_id").setAttribute("src", "");
+      document.getElementById("aud_cus_id").setAttribute("src", "");
+
+      var aud_source = "static/aud/letters/" + num + ".wav";
+      document.getElementById("audio_id").setAttribute("src", aud_source);
+
+      var source = "url(static/img/let/" + num + ".png)";
+      document.getElementById('bottom').style.backgroundImage = source;
+    }
+
+
+
+  else if (compare_str === "aPushT" && res_value > 10 && (current_time - time_compare) < 1000){
+    var word_source;
+    var aud_word_source;
+    var cus_aud_source = "";
+    var vid_source = "";
+
+    switch(num) {
+          case 0://letter A
+              $("span").text("Ara");
+              word_source = "url(static/img/wrd/ara.png)";
+              aud_word_source = "static/aud/words/Ara.wav";
+            break;
+          case 1://letter B
+              $("span").text("Bunny");
+              word_source = "url(static/img/wrd/bunny.gif)";
+              aud_word_source = "static/aud/words/Bunny.wav";
+            break;
+
+           case 2://letter C
+              $("span").text("Cookie");
+              word_source = "url(static/img/wrd/cookie.png)";
+              aud_word_source = "static/aud/words/Cookie.wav";
+            break;
+
+          case 3://letter D
+              $("span").text("Deer");
+              word_source = "url(static/img/wrd/deer.gif)";
+              aud_word_source = "static/aud/words/Deer.wav";
+            break;
+
+          case 4://letter E
+              $("span").text("Elephant");
+              word_source = "url(static/img/wrd/elephant.png)";
+              aud_word_source = "static/aud/words/Elephant.wav";
+            break;
+
+          case 5://letter F
+              $("span").text("Family");
+              word_source = "url(static/img/wrd/family.png)";
+              aud_word_source = "static/aud/words/Family.wav";
+            break;
+
+          case 6://letter G
+              $("span").text("Giraffe");
+              word_source = "url(static/img/wrd/giraffe.png)";
+              aud_word_source = "static/aud/words/Giraffe.wav";
+            break;
+
+          case 7://letter H
+              $("span").text("Harp");
+              word_source = "url(static/img/wrd/harp.png)";
+              aud_word_source = "static/aud/words/Harp.wav";
+              cus_aud_source = "static/aud/cus/harp.mp3";
+            break;
+
+          case 8://letter I
+              $("span").text("Igloo");
+              word_source = "url(static/img/wrd/igloo.png)";
+              aud_word_source = "static/aud/words/Igloo.wav";
+            break;
+
+          case 9://letter J
+              $("span").text("Jellyfish");
+              word_source = "url(static/img/wrd/jellyfish.gif)";
+              aud_word_source = "static/aud/words/Jellyfish.wav";
+            break;
+
+          case 10://letter K
+              $("span").text("Kitten");
+              word_source = "url(static/img/wrd/kitten.png)";
+              aud_word_source = "static/aud/words/Kitten.wav";
+            break;
+
+          case 11://letter L
+              $("span").text("Leaf");
+              word_source = "url(static/img/wrd/leaf.png)";
+              aud_word_source = "static/aud/words/Leaf.wav";
+            break;
+
+          case 12://letter M
+              $("span").text("Music");
+              vid_source = "static/vid/music.mp4";
+              aud_word_source = "static/aud/words/Music.wav";
+            break;
+
+          case 13://letter N
+              $("span").text("Nest");
+              word_source = "url(static/img/wrd/nest.png)";
+              aud_word_source = "static/aud/words/Nest.wav";
+            break;
+
+          case 14://letter O
+              $("span").text("Owl");
+              word_source = "url(static/img/wrd/owl.png)";
+              aud_word_source = "static/aud/words/Owl.wav";
+            break;
+
+          case 15://letter P
+              $("span").text("Pig");
+              word_source = "url(static/img/wrd/pig.gif)";
+              aud_word_source = "static/aud/words/Pig.wav";
+            break;
+
+          case 16://letter Q
+              $("span").text("Queen");
+              word_source = "url(static/img/wrd/queen.png)";
+              aud_word_source = "static/aud/words/Queen.wav";
+            break;
+
+          case 17://letter R
+              $("span").text("Racoon");
+              word_source = "url(static/img/wrd/racoon.png)";
+              aud_word_source = "static/aud/words/Racoon.wav";
+            break;
+
+          case 18://letter S
+              $("span").text("Sand");
+              word_source = "url(static/img/wrd/sand.png)";
+              aud_word_source = "static/aud/words/Sand.wav";
+            break;
+
+          case 19://letter T
+              $("span").text("Toy");
+              word_source = "url(static/img/wrd/toy.png)";
+              aud_word_source = "static/aud/words/Toy.wav";
+            break;
+
+          case 20://letter N
+              $("span").text("Umbrella");
+              word_source = "url(static/img/wrd/umbrella.gif)";
+              aud_word_source = "static/aud/words/Umbrella.wav";
+            break;
+
+          case 21://letter V
+              $("span").text("Violin");
+              word_source = "url(static/img/wrd/violin.png)";
+              aud_word_source = "static/aud/words/Violin.wav";
+              cus_aud_source = "static/aud/cus/violin.mp3";
+            break;
+
+          case 22://letter W
+              $("span").text("Water");
+              word_source = "url(static/img/wrd/water.gif)";
+              aud_word_source = "static/aud/words/Water.wav";
+            break;
+
+          case 23://letter X
+              $("span").text("X-ray");
+              word_source = "url(static/img/wrd/xray.png)";
+              aud_word_source = "static/aud/words/Xray.wav";
+            break;
+
+          case 24://letter Y
+              $("span").text("Yo-yo");
+              word_source = "url(static/img/wrd/yoyo.gif)";
+              aud_word_source = "static/aud/words/Yoyo.wav";
+            break;
+
+          case 25://letter Z
+              $("span").text("Zebra");
+              word_source = "url(static/img/wrd/zebra.png)";
+              aud_word_source = "static/aud/words/Zebra.wav";
+            break;
+        }
+
+          document.getElementById("bottom").style.backgroundImage = word_source;
+          document.getElementById("aud_word_id").setAttribute("src", aud_word_source);
+          document.getElementById("aud_cus_id").setAttribute("src", cus_aud_source);
+          document.getElementById("vid_id").setAttribute("src", vid_source);
+
+  }
+
+  else if (compare_str === "aTouch" && res_value > 10 && (current_time - time_compare) < 1000)
+  {
+    if (flag)
+    {
+      console.log(flag);
+      console.log("here");
+      $("span").text("");
+      var aud_source = "static/aud/letters/" + num + ".wav";
+      document.getElementById("audio_id").setAttribute("src", aud_source);
+      document.getElementById("aud_cus_id").setAttribute("src", "");
+      document.getElementById("bottom").style.backgroundImage = "url(static/img/let/" + num + ".png)";
+
+    }
+  }
+}
+
+   // make another HTTP call
+   delay();
+}
+
+ </script>
+
+ </head>
+ <body>
+ </body>
+</html>
