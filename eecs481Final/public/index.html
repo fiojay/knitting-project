@@ -103,7 +103,7 @@
 function delay(){
   setTimeout(function(){
     var sensorReading = loadStrings("/data", showData);  
-  }, 1500);
+  }, 500);
 }
 
 var current_time;
@@ -124,7 +124,7 @@ function showData(result) {
     time_compare = split_string[2];
     compare_str = res_string.substr(-6);  
     current_time = Date.now();
-    if(compare_str === "tTouch" && res_value > 10 && (current_time - time_compare) < 1000) 
+    if(compare_str === "tTouch" && res_value > 200 && (current_time - time_compare) < 1000) 
     {
       flag = true;
       num += 1;
@@ -175,7 +175,9 @@ function showData(result) {
 
           case 4://letter E
               $("span").text("Elephant");
-              word_source = "url(static/img/wrd/elephant.png)";
+              word_source = "url(static/img/wrd/elephant.gif)";
+              vid_source = "static/vid/elephant.m4a";
+              cus_aud_source = "static/aud/cus/elephant.mp3";
               aud_word_source = "static/aud/words/Elephant.wav";
             break;
 
@@ -187,7 +189,7 @@ function showData(result) {
 
           case 6://letter G
               $("span").text("Giraffe");
-              word_source = "url(static/img/wrd/giraffe.png)";
+              vid_source = "static/vid/giraffe.m4v";
               aud_word_source = "static/aud/words/Giraffe.wav";
             break;
 
@@ -212,19 +214,19 @@ function showData(result) {
 
           case 10://letter K
               $("span").text("Kitten");
-              word_source = "url(static/img/wrd/kitten.png)";
+              word_source = "url(static/img/wrd/kitten.gif)";
               aud_word_source = "static/aud/words/Kitten.wav";
             break;
 
           case 11://letter L
               $("span").text("Leaf");
-              word_source = "url(static/img/wrd/leaf.png)";
+              vid_source = "url(static/img/wrd/leaves.mp4)";
               aud_word_source = "static/aud/words/Leaf.wav";
             break;
 
           case 12://letter M
               $("span").text("Music");
-              vid_source = "static/vid/music.mp4";
+              vid_source = "static/vid/music.m4v";
               aud_word_source = "static/aud/words/Music.wav";
             break;
 
@@ -248,7 +250,7 @@ function showData(result) {
 
           case 16://letter Q
               $("span").text("Queen");
-              word_source = "url(static/img/wrd/queen.png)";
+              word_source = "url(static/img/wrd/queen.gif)";
               aud_word_source = "static/aud/words/Queen.wav";
             break;
 
@@ -291,7 +293,7 @@ function showData(result) {
 
           case 23://letter X
               $("span").text("X-ray");
-              word_source = "url(static/img/wrd/xray.png)";
+              word_source = "url(static/img/wrd/xray.gif)";
               aud_word_source = "static/aud/words/Xray.wav";
             break;
 
@@ -319,12 +321,12 @@ function showData(result) {
   {
     if (flag)
     {
-      console.log(flag);
-      console.log("here");
+      //console.log(flag);
       $("span").text("");
       var aud_source = "static/aud/letters/" + num + ".wav";
       document.getElementById("audio_id").setAttribute("src", aud_source);
       document.getElementById("aud_cus_id").setAttribute("src", "");
+      document.getElementById("vid_id").setAttribute("src","");
       document.getElementById("bottom").style.backgroundImage = "url(static/img/let/" + num + ".png)";
 
     }
